@@ -5,10 +5,13 @@ html {
   height: 100%; /* Ensures the body covers the full height of the viewport */
 }
 
+.messages {
+  height: 25vh;
+}
+
 .container {
-  /*margin-top: 5em;*/ /*THIS WHAT LOWERS PANELS*/
   display: flex; /* Activates Flexbox layout */
-  height: 100vh; /* Makes the container fill the full height of the screen */
+  height: 75vh; /* Makes the container fill the full height of the screen */
 }
 
 .left-panel,
