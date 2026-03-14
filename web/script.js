@@ -3,6 +3,18 @@ const message = document.getElementById("msg");
 message.textContent =
   "PLEASE ENTER YOUR NAMES THEN CLICK ON THE BUTTON TO CONFIRM";
 
+function constructInRightPanel() {
+  const container = document.querySelector(".right-panel");
+
+  //creating health bar
+  const progress = document.createElement("progress");
+  progress.id = "progress";
+  progress.value = 100;
+
+  //showing health bar
+  container.appendChild(progress);
+}
+
 function constructInLeftPanel() {
   const container = document.querySelector(".left-panel");
 
@@ -51,10 +63,18 @@ function confirm() {
   const input1 = document.getElementById("player1");
   const input2 = document.getElementById("player2");
 
-  //clear texts
+  //putting names
   label.textContent = "QUESTION";
   labelplayer1.textContent = input1.value;
   labelplayer2.textContent = input2.value;
+
+  //setting data-sets because the glow in css depends on it
+  labelplayer1.dataset.text = input1.value;
+  labelplayer2.dataset.text = input2.value;
+
+  //glowing names
+  labelplayer1.classList.add("glow");
+  labelplayer2.classList.add("glow");
 
   //remove btns
   if (btn) {

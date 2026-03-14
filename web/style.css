@@ -104,8 +104,8 @@ html {
   margin: 2em;
 }
 
-/*glowing names when battling phase*/
-h2 {
+/*glowing names when engaged in battle phase*/
+.glow {
   position: relative;
   z-index: 1;
   font-size: 5em;
@@ -122,7 +122,7 @@ h2 {
   background-clip: text;
 }
 
-h2:before {
+.glow:before {
   content: attr(data-text);
   position: absolute;
   top: 4px;
@@ -142,7 +142,7 @@ h2:before {
   color: transparent;
 }
 
-h2:after {
+.glow:after {
   content: attr(data-text);
   position: absolute;
   top: 30px;
