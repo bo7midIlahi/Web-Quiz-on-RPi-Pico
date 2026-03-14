@@ -50,6 +50,7 @@ html {
   margin-top: 50px;
   font-size: 2em;
   font-weight: bold;
+  margin: 0;
 }
 
 .messages label {
@@ -91,3 +92,6 @@ html {
 }
 
 /*editing margin between choices*/
+#choices {
+  margin: 2em;
+}

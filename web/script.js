@@ -10,7 +10,7 @@ function constructInMessage() {
   const choice1 = document.createElement("label");
   const choice2 = document.createElement("label");
   const choice3 = document.createElement("label");
-
+  const br = document.createElement("br");
   //sestting value of new elements
   choice1.textContent = "CHOICE1";
   choice2.textContent = "CHOICE2";
