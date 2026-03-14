@@ -3,6 +3,18 @@ const message = document.getElementById("msg");
 message.textContent =
   "PLEASE ENTER YOUR NAMES THEN CLICK ON THE BUTTON TO CONFIRM";
 
+function constructInLeftPanel() {
+  const container = document.querySelector(".left-panel");
+
+  //creating health bar
+  const progress = document.createElement("progress");
+  progress.id = "progress";
+  progress.value = 100;
+
+  //showing health bar
+  container.appendChild(progress);
+}
+
 function constructInMessage() {
   console.log("CONSTRUCTING");
 
@@ -10,7 +22,7 @@ function constructInMessage() {
   const choice1 = document.createElement("label");
   const choice2 = document.createElement("label");
   const choice3 = document.createElement("label");
-  const br = document.createElement("br");
+
   //sestting value of new elements
   choice1.textContent = "CHOICE1";
   choice2.textContent = "CHOICE2";
@@ -41,8 +53,8 @@ function confirm() {
 
   //clear texts
   label.textContent = "QUESTION";
-  labelplayer1.textContent = "YES";
-  labelplayer2.textContent = "NO";
+  labelplayer1.textContent = input1.value;
+  labelplayer2.textContent = input2.value;
 
   //remove btns
   if (btn) {
@@ -59,6 +71,6 @@ function confirm() {
   }
 
   constructInMessage();
-  /*constructInLeftPanel();
-  constructInRightPanel();*/
+  constructInLeftPanel();
+  constructInRightPanel();
 }

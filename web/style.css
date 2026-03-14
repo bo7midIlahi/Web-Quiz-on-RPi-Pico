@@ -104,7 +104,7 @@ html {
   margin: 2em;
 }
 
-/*glowing responses*/
+/*glowing names when battling phase*/
 h2 {
   position: relative;
   z-index: 1;
@@ -161,4 +161,9 @@ h2:after {
   color: transparent;
 
   filter: blur(20px) brightness(2);
+}
+
+/*health bar progress*/
+#progress {
+  width: 55em;
 }
