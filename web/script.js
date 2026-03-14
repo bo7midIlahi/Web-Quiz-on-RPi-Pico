@@ -42,7 +42,7 @@ function confirm() {
   //clear texts
   label.textContent = "QUESTION";
   labelplayer1.textContent = "YES";
-  labelplayer2.textContent = "YES";
+  labelplayer2.textContent = "NO";
 
   //remove btns
   if (btn) {
