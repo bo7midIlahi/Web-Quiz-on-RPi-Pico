@@ -3,8 +3,25 @@ const message = document.getElementById("msg");
 message.textContent =
   "PLEASE ENTER YOUR NAMES THEN CLICK ON THE BUTTON TO CONFIRM";
 
-function construct() {
+function constructInMessage() {
   console.log("CONSTRUCTING");
+
+  //creating new elements
+  const choice1 = document.createElement("label");
+  const choice2 = document.createElement("label");
+  const choice3 = document.createElement("label");
+
+  //sestting value of new elements
+  choice1.textContent = "CHOICE1";
+  choice2.textContent = "CHOICE2";
+  choice3.textContent = "CHOICE3";
+
+  //add new elements to .messages
+  const container = document.querySelector(".messages");
+
+  container.appendChild(choice1);
+  container.appendChild(choice2);
+  container.appendChild(choice3);
 }
 
 function confirm() {
@@ -36,5 +53,7 @@ function confirm() {
     input2.remove();
   }
 
-  construct();
+  constructInMessage();
+  /*constructInLeftPanel();
+  constructInRightPanel();*/
 }
