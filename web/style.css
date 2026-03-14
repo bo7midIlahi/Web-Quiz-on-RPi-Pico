@@ -1,0 +1,27 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the body covers the full height of the viewport */
+}
+
+.container {
+  display: flex; /* Activates Flexbox layout */
+  height: 100vh; /* Makes the container fill the full height of the screen */
+}
+
+.left-panel,
+.right-panel {
+  flex: 1; /* Each item takes an equal proportion of the available space */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding/border is included in the width calculation */
+  overflow-y: auto; /* Allows content to scroll within the panel if it overflows */
+}
+
+.left-panel {
+  background-color: #f1f1f1;
+}
+
+.right-panel {
+  background-color: #ddd;
+}
