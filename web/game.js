@@ -17,10 +17,16 @@ async function loadQuestions(topic) {
 // usage
 
 function showquestion(q, i) {
+  console.log("inside showquestion()");
   const questions = document.getElementById("msg");
   questions.textContent = q[i].question;
-  const choices = document.getElementById("choice");
-  console.log(`choices = ${choices.textContent}`);
+
+  console.log(`choice = ${q[i].choices[i]}`);
+
+  for (let index = 0; index < q.length; index++) {
+    const element = document.getElementById(`choice${index + 1}`);
+    element.textContent = q[i].choices[index];
+  }
 }
 
 loadQuestions("css").then((q) => console.log(q));
