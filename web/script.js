@@ -55,9 +55,9 @@ function constructInMessage() {
   choice3.textContent = "CHOICE3";
 
   //setting id for choices
-  choice1.id = "choice";
-  choice2.id = "choice";
-  choice3.id = "choice";
+  choice1.id = "choice1";
+  choice2.id = "choice2";
+  choice3.id = "choice3";
 
   //add new elements to .messages
   const container = document.querySelector(".messages");

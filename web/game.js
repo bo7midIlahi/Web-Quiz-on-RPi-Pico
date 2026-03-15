@@ -1,6 +1,7 @@
 export function main() {
   //export to make the function accessible from script.js
   console.log("main function");
+  loadQuestions("html").then((q) => showquestion(q, 0));
 }
 
 async function loadQuestions(topic) {
@@ -15,6 +16,12 @@ async function loadQuestions(topic) {
 }
 // usage
 
-loadQuestions("html").then((q) => console.log(q));
+function showquestion(q, i) {
+  const questions = document.getElementById("msg");
+  questions.textContent = q[i].question;
+  const choices = document.getElementById("choice");
+  console.log(`choices = ${choices.textContent}`);
+}
+
 loadQuestions("css").then((q) => console.log(q));
 loadQuestions("js").then((q) => console.log(q));
