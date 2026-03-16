@@ -109,6 +109,18 @@ function checkAnswer() {
       backgroundColor: "pink",
     });
   }
+  if (correctAnswer(answerPlayer2)) {
+    Object.assign(answerPlayer2.style, {
+      color: "green",
+      backgroundColor: "lightgreen",
+    });
+  } else {
+    healthBar[1].value = -0.1;
+    Object.assign(answerPlayer2.style, {
+      color: "red",
+      backgroundColor: "pink",
+    });
+  }
 }
 
 export function timer() {
