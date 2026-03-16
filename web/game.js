@@ -20,7 +20,10 @@ async function loadQuestions(topic) {
 
 function changeAnswer(playerID, choice) {
   const element = document.getElementById(playerID);
+
   element.textContent = document.getElementById(`choice${choice}`).textContent;
+
+  element.dataset.choice = choice; // store choice number
 }
 
 function getAnswers() {
