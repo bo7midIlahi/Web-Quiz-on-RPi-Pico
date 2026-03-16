@@ -2,6 +2,7 @@ export function main() {
   //export to make the function accessible from script.js
   console.log("main function");
   loadQuestions("html").then((q) => showquestion(q, 0));
+  timer();
 }
 
 async function loadQuestions(topic) {
@@ -14,7 +15,28 @@ async function loadQuestions(topic) {
     console.error("Error loading questions:", error);
   }
 }
-// usage
+
+export function timer() {
+  const element = document.querySelector(".messages");
+
+  const clock = document.createElement("h2");
+  clock.id = "clock";
+
+  let time = 10;
+
+  clock.textContent = time;
+  element.appendChild(clock);
+
+  const interval = setInterval(() => {
+    time--;
+    clock.textContent = time;
+
+    if (time <= 0) {
+      clearInterval(interval);
+      clock.textContent = "Time's up!";
+    }
+  }, 1000);
+}
 
 function showquestion(q, i) {
   console.log("inside showquestion()");
