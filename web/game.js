@@ -86,6 +86,12 @@ function createAnswerLocation() {
 
 function correctAnswer(answerElement) {
   const playerChoice = Number(answerElement.dataset.choice);
+  const rightAnswer = document.getElementById(
+    `choice${currentQuestion.correct_answer}`
+  );
+  Object.assign(rightAnswer.style, {
+    backgroundColor: "lightgreen",
+  });
 
   if (!playerChoice) return false;
 
