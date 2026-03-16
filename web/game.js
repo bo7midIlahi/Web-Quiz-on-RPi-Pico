@@ -79,7 +79,28 @@ function createAnswerLocation() {
   getAnswers();
 }
 
-function checkAnswer() {}
+function correctAnswer(answer) {
+  return false;
+}
+
+function checkAnswer() {
+  const answerPlayer1 = document.getElementById("answerPlayer1");
+  const answerPlayer2 = document.getElementById("answerPlayer2");
+  const healthBar = document.querySelectorAll('[id="progress"]');
+
+  if (correctAnswer(answerPlayer1)) {
+    Object.assign(answerPlayer1.style, {
+      color: "green",
+      backgroundColor: "lightgreen",
+    });
+  } else {
+    healthBar[0].value = -0.1;
+    Object.assign(answerPlayer1.style, {
+      color: "red",
+      backgroundColor: "pink",
+    });
+  }
+}
 
 export function timer() {
   const element = document.querySelector(".messages");
@@ -87,7 +108,7 @@ export function timer() {
   const clock = document.createElement("h2");
   clock.id = "clock";
 
-  let time = 10;
+  let time = 3;
 
   clock.textContent = time;
   element.appendChild(clock);
@@ -112,7 +133,7 @@ function showquestion(q, i) {
 
   console.log(`choice = ${q[i].choices[i]}`);
 
-  for (let index = 0; index < q.length; index++) {
+  for (let index = 0; index < currentQuestion.choices.length; index++) {
     const element = document.getElementById(`choice${index + 1}`);
     element.textContent = q[i].choices[index];
   }
