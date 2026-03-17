@@ -11,6 +11,7 @@
   </tr>
 </table>
 
+
 ## ✨ Key features
 
 - **Scoring system** player who answer first get a bonus
