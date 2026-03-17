@@ -69,6 +69,16 @@ function constructInMessage() {
   container.appendChild(choice3);
 }
 
+function checkInputs() {
+  const btn = document.getElementById("OKbtn");
+
+  if (input1.value.trim() && input2.value.trim()) {
+    btn.disabled = false;
+  } else {
+    btn.disabled = true;
+  }
+}
+
 function confirm() {
   const label = document.getElementById("msg");
   const labelplayer1 = document.getElementById("namePlayer1");
@@ -78,37 +88,41 @@ function confirm() {
 
   const input1 = document.getElementById("player1");
   const input2 = document.getElementById("player2");
+  input1.addEventListener("input", checkInputs);
+  input2.addEventListener("input", checkInputs);
 
-  //putting names
+  // 👉 VALIDATION
+  if (!input1.value.trim() || !input2.value.trim()) {
+    label.textContent = "⚠️ BOTH PLAYERS MUST ENTER THEIR NAMES!";
+    label.style.color = "red";
+    return; // 🚨 STOP HERE
+  }
+
+  // reset message style (optional)
+  label.style.color = "";
+
+  // putting names
   label.textContent = "QUESTION";
   labelplayer1.textContent = input1.value;
   labelplayer2.textContent = input2.value;
 
-  //setting data-sets because the glow in css depends on it
   labelplayer1.dataset.text = input1.value;
   labelplayer2.dataset.text = input2.value;
 
-  //glowing names
   labelplayer1.classList.add("glow");
   labelplayer2.classList.add("glow");
 
-  //remove btns
-  if (btn) {
-    btn.remove();
-  }
+  // remove btns
+  if (btn) btn.remove();
 
-  //remove inputs
-  if (input1) {
-    input1.remove();
-  }
-
-  if (input2) {
-    input2.remove();
-  }
+  // remove inputs
+  input1.remove();
+  input2.remove();
 
   constructInMessage();
   constructInLeftPanel(input1);
   constructInRightPanel(input2);
+
   main(document.getElementById("file").value);
 }
 window.confirm = confirm; // to make the confirm() global
