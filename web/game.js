@@ -3,9 +3,17 @@ let questionNumber = 0;
 let questionsList = [];
 let healthBar1HR = 100;
 let healthBar2HR = 100;
+let player1Name = "";
+let player2Name = "";
 
 export function main() {
   console.log("main function");
+
+  console.log(`player1: ${document.querySelectorAll(".glow")[0].textContent}`);
+  player1Name = document.querySelectorAll(".glow")[0].textContent;
+
+  console.log(`player2: ${document.querySelectorAll(".glow")[1].textContent}`);
+  player2Name = document.querySelectorAll(".glow")[1].textContent;
 
   loadQuestions("html").then((q) => {
     questionsList = q; // store all questions
@@ -30,12 +38,12 @@ function checkGameOver() {
   }
 
   if (healthBar1HR <= 0) {
-    showWinner("Player 2");
+    showWinner(player2Name);
     return true;
   }
 
   if (healthBar2HR <= 0) {
-    showWinner("Player 1");
+    showWinner(player1Name);
     return true;
   }
 
