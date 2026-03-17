@@ -140,7 +140,6 @@ function changeAnswer(playerID, choice) {
   element.textContent = document.getElementById(`choice${choice}`).textContent;
   element.dataset.choice = choice;
 
-  // 👉 ADD THIS
   const now = Date.now();
 
   if (playerID === "answerPlayer1" && !player1Time) {
@@ -289,7 +288,7 @@ function checkAnswer(responseTime = 3) {
     healthBar2.style.width = healthBar2HR + "%";
     healthBar2.style.backgroundColor = "red";
     setTimeout(() => {
-      healthBar2.style.backgroundColor = "green"; // ✅ fixed
+      healthBar2.style.backgroundColor = "green";
     }, 300);
 
     Object.assign(answerPlayer2.style, {
@@ -361,7 +360,7 @@ export function timer() {
       let responseTime = (Date.now() - startTime) / 1000;
       checkAnswer(responseTime);
 
-      // 👉 GO TO NEXT QUESTION
+      //GO TO NEXT QUESTION
       setTimeout(() => {
         if (checkGameOver()) return;
 
