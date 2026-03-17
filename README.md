@@ -1,5 +1,10 @@
 <h1 align="center">QUIZZ_LER</h1>
 <h2 align="center">A web quiz about about html/css/js</h2>
+  <img
+    src="img/vid.gif"
+    alt="vid"
+    width=100%
+  />
 
 <table>
   <tr>
