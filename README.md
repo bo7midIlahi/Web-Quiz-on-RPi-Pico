@@ -19,6 +19,7 @@
 ## ✨ Key features
 
 - **Scoring system** player who answer first get a bonus
+- **AZERTY & QWERTY** supports both type of keyboards
 - **Winner page** that shows the winner at the end of the gamme
 - **Multiplayer** requires two players to play
 

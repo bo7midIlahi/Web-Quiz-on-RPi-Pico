@@ -158,6 +158,7 @@ function changeAnswer(playerID, choice) {
   element.textContent = document.getElementById(`choice${choice}`).textContent;
   element.dataset.choice = choice;
 
+  //get response time for both players
   const now = Date.now();
 
   if (playerID === "answerPlayer1" && !player1Time) {
@@ -170,7 +171,9 @@ function changeAnswer(playerID, choice) {
 }
 
 function getAnswers() {
+  //this functions supports AZERTY and QWERTY keyboards
   document.addEventListener("keydown", function (event) {
+    //player 1  KEYS: AZE
     // Choice 1
     if (event.code === "KeyA" || event.key.toLowerCase() === "a") {
       console.log("Choice 1 selected");
@@ -189,7 +192,7 @@ function getAnswers() {
       changeAnswer("answerPlayer1", 3);
     }
 
-    //player 2
+    //player 2 KEYS: KLM
     //choice1
     if (event.code === "KeyK" || event.key.toLowerCase() === "k") {
       console.log("Choice 1 selected");
@@ -233,7 +236,7 @@ function correctAnswer(answerElement) {
     `choice${currentQuestion.correct_answer}`
   );
   Object.assign(rightAnswer.style, {
-    backgroundColor: "lightgreen",
+    backgroundColor: "lightgreen", //highlights correct answer
   });
 
   if (!playerChoice) return false;
