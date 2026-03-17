@@ -91,11 +91,11 @@ function confirm() {
   input1.addEventListener("input", checkInputs);
   input2.addEventListener("input", checkInputs);
 
-  // 👉 VALIDATION
+  //VALIDATION
   if (!input1.value.trim() || !input2.value.trim()) {
     label.textContent = "⚠️ BOTH PLAYERS MUST ENTER THEIR NAMES!";
     label.style.color = "red";
-    return; // 🚨 STOP HERE
+    return;
   }
 
   // reset message style (optional)
