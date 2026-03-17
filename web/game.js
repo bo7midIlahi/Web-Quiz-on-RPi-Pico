@@ -1,12 +1,15 @@
 let currentQuestion = null; /*store current question to access it globally*/
+
 let questionNumber = 0;
 let questionsList = [];
+
 let healthBar1HR = 100;
 let healthBar2HR = 100;
+
 let player1Name = "";
 let player2Name = "";
 
-export function main() {
+export function main(file) {
   console.log("main function");
 
   console.log(`player1: ${document.querySelectorAll(".glow")[0].textContent}`);
@@ -15,7 +18,7 @@ export function main() {
   console.log(`player2: ${document.querySelectorAll(".glow")[1].textContent}`);
   player2Name = document.querySelectorAll(".glow")[1].textContent;
 
-  loadQuestions("html").then((q) => {
+  loadQuestions(file).then((q) => {
     questionsList = q; // store all questions
     startGame(); // start loop
   });

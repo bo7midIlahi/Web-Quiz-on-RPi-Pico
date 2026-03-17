@@ -12,6 +12,12 @@ html {
   align-items: center;
 }
 
+select {
+  text-align: center;
+  color: #ff72c0;
+  background: linear-gradient(90deg, #775bea, #ff72c0);
+}
+
 .container {
   display: flex; /* Activates Flexbox layout */
   height: 70vh; /* Makes the container fill the full height of the screen */

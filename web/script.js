@@ -109,6 +109,6 @@ function confirm() {
   constructInMessage();
   constructInLeftPanel(input1);
   constructInRightPanel(input2);
-  main();
+  main(document.getElementById("file").value);
 }
 window.confirm = confirm; // to make the confirm() global
