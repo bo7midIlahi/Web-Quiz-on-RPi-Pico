@@ -16,7 +16,6 @@
   </tr>
 </table>
 
-
 ## ✨ Key features
 
 - **Scoring system** player who answer first get a bonus
@@ -118,3 +117,11 @@ export function main(file) {
 ```
 
 </details>
+
+## 🆚 Difficulties & Solutions
+
+| Difficulties                   |       Solutions       |
+| :----------------------------- | :-------------------: |
+| Where to get Quizes            |    Stored in Json     |
+| Which Json file to choose      |     User defined      |
+| Html elements when game begins | created by javascript |
