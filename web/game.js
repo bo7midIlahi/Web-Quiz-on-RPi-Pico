@@ -1,4 +1,6 @@
 let currentQuestion = null; /*store current question to access it globally*/
+let healthBar1HR = 100;
+let healthBar2HR = 100;
 
 export function main() {
   //export to make the function accessible from script.js
@@ -104,26 +106,32 @@ function checkAnswer() {
   const healthBar1 = document.getElementById("progress1");
   const healthBar2 = document.getElementById("progress2");
 
+  // PLAYER 1
   if (correctAnswer(answerPlayer1)) {
     Object.assign(answerPlayer1.style, {
       color: "green",
       backgroundColor: "lightgreen",
     });
   } else {
-    healthBar1.value -= 1;
+    healthBar1HR = Math.max(0, healthBar1HR - 20); // reduce 20%
+    healthBar1.style.width = healthBar1HR + "%";
+
     Object.assign(answerPlayer1.style, {
       color: "red",
       backgroundColor: "pink",
     });
   }
 
+  // PLAYER 2
   if (correctAnswer(answerPlayer2)) {
     Object.assign(answerPlayer2.style, {
       color: "green",
       backgroundColor: "lightgreen",
     });
   } else {
-    healthBar2.value -= 1;
+    healthBar2HR = Math.max(0, healthBar2HR - 20); // reduce 20%
+    healthBar2.style.width = healthBar2HR + "%";
+
     Object.assign(answerPlayer2.style, {
       color: "red",
       backgroundColor: "pink",

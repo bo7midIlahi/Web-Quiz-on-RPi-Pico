@@ -37,7 +37,7 @@ function constructInLeftPanel(input1) {
   container.appendChild(element);
 
   const progress = document.createElement("div");
-  progress.id = "progress2";
+  progress.id = "progress1";
   progress.class = "progress";
 
   container.appendChild(progress);
