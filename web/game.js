@@ -12,6 +12,8 @@ let player2Name = "";
 export function main(file) {
   console.log("main function");
 
+  document.getElementById("file").remove();
+
   console.log(`player1: ${document.querySelectorAll(".glow")[0].textContent}`);
   player1Name = document.querySelectorAll(".glow")[0].textContent;
 
