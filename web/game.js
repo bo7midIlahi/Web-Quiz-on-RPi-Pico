@@ -38,9 +38,18 @@ function startGame() {
     console.log("Game finished!");
     return;
   }
-
   showquestion(questionsList, questionNumber);
   timer();
+  const answerPlayer1 = document.getElementById("answerPlayer1");
+  const answerPlayer2 = document.getElementById("answerPlayer2");
+  Object.assign(answerPlayer1.style, {
+    color: "grey",
+    backgroundColor: "",
+  });
+  Object.assign(answerPlayer2.style, {
+    color: "grey",
+    backgroundColor: "",
+  });
 }
 
 function checkGameOver() {
