@@ -17,10 +17,10 @@ function constructInRightPanel(input2) {
   element.classList.add("glow");
   container.appendChild(element);
 
-  const progress = document.createElement("progress");
+  const progress = document.createElement("div");
   progress.id = "progress2";
   progress.class = "progress";
-  progress.value = 100;
+
   container.appendChild(progress);
 }
 
@@ -36,10 +36,10 @@ function constructInLeftPanel(input1) {
   element.classList.add("glow");
   container.appendChild(element);
 
-  const progress = document.createElement("progress");
-  progress.id = "progress1";
+  const progress = document.createElement("div");
+  progress.id = "progress2";
   progress.class = "progress";
-  progress.value = 100;
+
   container.appendChild(progress);
 }
 

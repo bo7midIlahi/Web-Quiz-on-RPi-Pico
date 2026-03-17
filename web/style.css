@@ -166,7 +166,15 @@ html {
 /*health bar progress*/
 #progress1,
 #progress2 {
-  width: 55em;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-right-width: 5px;
+  color: red;
 }
 
 /*player answers style*/
