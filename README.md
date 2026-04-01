@@ -11,8 +11,11 @@
     <td colspan="2"><img src="img/landingpage.png" style="width: 500px, height: 500px"></td>
   </tr>
   <tr>
-    <td><img src="img/win.png" style="width: 500px"></td>
-    <td><img src="img/draw.png" style="width: 500px"></td>
+    <td><img src="img/win.png" style="width: 800px"></td>
+    <td><img src="img/draw.png" style="width: 800px"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="img/remote.jpg" style="height: 500px;"</td>
   </tr>
 </table>
 
@@ -22,6 +25,7 @@
 - **AZERTY & QWERTY** supports both type of keyboards
 - **Winner page** that shows the winner at the end of the gamme
 - **Multiplayer** requires two players to play
+- **Button Inputs** via arduino for the 1st player _ONLY_
 
 ## 📊 How to play
 
@@ -54,10 +58,11 @@ sequenceDiagram
 - HTML
 - CSS
 - JS
+- Arduino
 
 ## 🆚 Score Comparison
 
-|      :Criteria:       |          score           |
+|       Criteria        |          score           |
 | :-------------------: | :----------------------: |
 |    player x faster    |  bonus +5 for player x   |
 | player changed answer |       bonus resets       |
@@ -119,10 +124,54 @@ export function main(file) {
 
 </details>
 
+<details>
+<summary>Button Inputs</summary>
+
+By wiring the buttons to the arduino _MICRO_, I used a library called Keyboard.h in order to simulate keyboard inputs. It follows the AZERTY/QWERTY configuration of the PC the MICRO is linked to it.
+
+```cpp
+#include <Keyboard.h>
+
+const int buttonPinK = 2; // Pin connected to button
+const int buttonPinL = 3; // Pin connected to button
+const int buttonPinM = 4; // Pin connected to button
+
+void setup() {
+  pinMode(buttonPinK, INPUT_PULLUP); // Use internal pull-up
+  pinMode(buttonPinL, INPUT_PULLUP); // Use internal pull-up
+  pinMode(buttonPinM, INPUT_PULLUP); // Use internal pull-up
+
+  Serial.begin(115200);
+  Keyboard.begin();
+}
+
+void loop() {
+  if (digitalRead(buttonPinK) == LOW) {
+    Serial.println("A");
+    Keyboard.write(65);
+  }
+  if (digitalRead(buttonPinL) == LOW) {
+    Serial.println("Z");
+    Keyboard.write(90);
+  }
+  if (digitalRead(buttonPinM) == LOW) {
+    Serial.println("E");
+    Keyboard.write(69);
+  }else{
+    Serial.println("NOTHING");
+  }
+  delay(50);
+}
+
+```
+
+</details>
+
 ## 🆚 Difficulties & Solutions
 
-| Difficulties                   |       Solutions       |
-| :----------------------------- | :-------------------: |
-| Where to get Quizes            |    Stored in Json     |
-| Which Json file to choose      |     User defined      |
-| Html elements when game begins | created by javascript |
+| Difficulties                      |             Solutions              |
+| :-------------------------------- | :--------------------------------: |
+| Where to get Quizes               |           Stored in Json           |
+| Which Json file to choose         |            User defined            |
+| Html elements when game begins    |       created by javascript        |
+| Micro couldn't send _M_ character | Set the buttons for the 1st Player |
